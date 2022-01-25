@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Meal_Plan_Calendar.Models.MenuItem>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Meal Plan Calendar</h1>
+    <p>A simpler way to plan your meals.</p>
+
+
+    <div class="container-fluid">
+
+        <div class="main-content">
+
+            <div class="column-1" id="calendarCard">
+                <div class="card">
+                    <div class="container-fluid" id="calendar"></div>
+                </div>
+            </div>
+
+            <div class="column-2">
+                <div class="card" style="max-width:700px;">
+                    <div class="card-header" style="font-size:1em;">Add Menu Item</div>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <select class="form-control" type="text" name="name" id="name">
+                            <option value="">select a menu item</option>
+                            @foreach (var item in Model)
+                            {
+                                <option value="@item.Meal_Name"> @item.Meal_Name</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Date</label>
+                        <input class="form-control" type="date" name="date" id="date" />
+                        <span class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="time">Time</label>
+                        <input class="form-control" type="time" name="time" id="time" />
+                        <span class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-dark btn-block" onclick="addMenuItem()">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

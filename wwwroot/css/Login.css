@@ -1,0 +1,12 @@
+﻿body {
+}
+
+#auth-card {
+    padding-bottom: 25px;
+}
+
+#auth-card .card {
+    font-size: .8em;
+    max-width: 400px;
+    height: 510px;
+}
